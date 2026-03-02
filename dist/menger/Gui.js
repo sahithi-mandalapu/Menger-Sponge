@@ -217,7 +217,7 @@ export class GUI {
         canvas.addEventListener("contextmenu", (event) => event.preventDefault());
     }
 }
-GUI.rotationSpeed = 0.05;
+GUI.rotationSpeed = 0.0356;
 GUI.zoomSpeed = 0.1;
 GUI.rollSpeed = 0.1;
 GUI.panSpeed = 0.1;

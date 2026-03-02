@@ -25,7 +25,7 @@ interface IGUI {
  * the the camera.
  */
 export class GUI implements IGUI {
-  private static readonly rotationSpeed: number = 0.05;
+  private static readonly rotationSpeed: number = 0.0356;
   private static readonly zoomSpeed: number = 0.1;
   private static readonly rollSpeed: number = 0.1;
   private static readonly panSpeed: number = 0.1;

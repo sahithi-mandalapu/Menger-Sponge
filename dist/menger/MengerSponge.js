@@ -95,10 +95,14 @@ export class MengerSponge {
             // -Y
             {
                 verts: [
-                    [minx, miny, maxz],
-                    [maxx, miny, maxz],
-                    [maxx, miny, minz],
-                    [minx, miny, minz]
+                    //   [minx, miny, maxz],
+                    //   [maxx, miny, maxz],
+                    //   [maxx, miny, minz],
+                    //   [minx, miny, minz]
+                    [minx, miny, minz], // swapped
+                    [maxx, miny, minz], // swapped
+                    [maxx, miny, maxz], // swapped
+                    [minx, miny, maxz] // swapped
                 ],
                 norm: [0, -1, 0]
             },
