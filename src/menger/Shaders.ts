@@ -53,7 +53,7 @@ export let defaultFSText = `
         }
 
         // Apply diffuse shading with ambient so faces remain visible
-        float ambient = 0.3;
+        float ambient = 0.05;
         vec3 color = baseColor * (ambient + diffuse);
         color = clamp(color, 0.0, 1.0);
         gl_FragColor = vec4(color, 1.0);
@@ -104,7 +104,7 @@ export let floorFSText = `
         // parity will be 0.0 or 1.0 -> pick black or white
         vec3 baseColor = (parity < 0.5) ? vec3(0.0) : vec3(1.0);
 
-        float ambient = 0.3;
+        float ambient = 0.01;
         vec3 color = baseColor * (ambient + diffuse);
         gl_FragColor = vec4(color, 1.0);
     }

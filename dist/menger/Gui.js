@@ -29,7 +29,7 @@ export class GUI {
         this.fps = true;
         this.dragging = false;
         /* Create camera setup */
-        this.camera = new Camera(new Vec3([0, 0, -6]), new Vec3([0, 0, 0]), new Vec3([0, 1, 0]), 45, this.width / this.height, 0.1, 1000.0);
+        this.camera = new Camera(new Vec3([0, 0, 6]), new Vec3([0, 0, 0]), new Vec3([0, 1, 0]), 45, this.width / this.height, 0.1, 1000.0);
     }
     /**
      * Sets the GUI's camera to the given camera

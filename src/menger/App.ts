@@ -88,8 +88,8 @@ export class MengerAnimation extends CanvasAnimation {
   public reset(): void {
 
     /* debugger; */
-    this.lightPosition = new Vec4([-10.0, 10.0, -10.0, 1.0]);
-    // this.lightPosition = new Vec4([10.0, 10.0, 10.0, 1.0]);
+    // this.lightPosition = new Vec4([-10.0, 10.0, -10.0, 1.0]);
+    this.lightPosition = new Vec4([10.0, 10.0, 10.0, 1.0]);
     this.backgroundColor = new Vec4([0.0, 0.37254903, 0.37254903, 1.0]);
 
     this.initMenger();
@@ -222,7 +222,7 @@ export class MengerAnimation extends CanvasAnimation {
 
         // Create floor geometry: a plane at y = -2 with a large extent
         const floorY = -2.0;
-        const floorExtent = 100.0;
+        const floorExtent = 600.0;
       
         this.floorVertices = [
           -floorExtent, floorY, -floorExtent, 1.0,
@@ -348,7 +348,8 @@ export class MengerAnimation extends CanvasAnimation {
     const bg: Vec4 = this.backgroundColor;
     gl.clearColor(bg.r, bg.g, bg.b, bg.a);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-    gl.enable(gl.CULL_FACE);
+    // gl.disable(gl.CULL_FACE);
+    gl.enable(gl.CULL_FACE); 
     gl.enable(gl.DEPTH_TEST);
     gl.frontFace(gl.CCW);
     gl.cullFace(gl.BACK);
@@ -416,9 +417,9 @@ export class MengerAnimation extends CanvasAnimation {
       new Float32Array(this.gui.projMatrix().all())
     );
     gl.uniform4fv(this.mengerLightUniformLocation, this.lightPosition.xyzw);
-    console.log("light:", this.lightPosition.xyzw);
-	
-	console.log("Drawing ", this.sponge.indicesFlat().length, " triangles");
+
+    // console.log("light:", this.lightPosition.xyzw);
+	  // console.log("Drawing ", this.sponge.indicesFlat().length, " triangles");
 
 
     /* Draw menger */

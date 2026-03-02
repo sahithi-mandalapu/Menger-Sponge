@@ -75,7 +75,7 @@ export class GUI implements IGUI {
     this.dragging = false;
     /* Create camera setup */
     this.camera = new Camera(
-      new Vec3([0, 0, -6]),
+      new Vec3([0, 0, 6]),
       new Vec3([0, 0, 0]),
       new Vec3([0, 1, 0]),
       45,

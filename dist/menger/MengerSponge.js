@@ -53,30 +53,42 @@ export class MengerSponge {
             // +X
             {
                 verts: [
-                    [maxx, miny, minz],
-                    [maxx, miny, maxz],
-                    [maxx, maxy, maxz],
-                    [maxx, maxy, minz]
+                    //   [maxx, miny, minz],
+                    //   [maxx, miny, maxz],
+                    //   [maxx, maxy, maxz],
+                    //   [maxx, maxy, minz]
+                    [maxx, maxy, minz], // swapped
+                    [maxx, maxy, maxz], // swapped
+                    [maxx, miny, maxz], // swapped
+                    [maxx, miny, minz] // swapped
                 ],
                 norm: [1, 0, 0]
             },
             // -X
             {
                 verts: [
-                    [minx, miny, maxz],
-                    [minx, miny, minz],
-                    [minx, maxy, minz],
-                    [minx, maxy, maxz]
+                    //   [minx, miny, maxz],
+                    //   [minx, miny, minz],
+                    //   [minx, maxy, minz],
+                    //   [minx, maxy, maxz]
+                    [minx, maxy, maxz], // swapped
+                    [minx, maxy, minz], // swapped
+                    [minx, miny, minz], // swapped
+                    [minx, miny, maxz] // swapped
                 ],
                 norm: [-1, 0, 0]
             },
             // +Y
             {
                 verts: [
-                    [minx, maxy, minz],
-                    [maxx, maxy, minz],
-                    [maxx, maxy, maxz],
-                    [minx, maxy, maxz]
+                    //   [minx, maxy, minz],
+                    //   [maxx, maxy, minz],
+                    //   [maxx, maxy, maxz],
+                    //   [minx, maxy, maxz]
+                    [minx, maxy, maxz], // swapped
+                    [maxx, maxy, maxz], // swapped
+                    [maxx, maxy, minz], // swapped
+                    [minx, maxy, minz] // swapped
                 ],
                 norm: [0, 1, 0]
             },
@@ -93,20 +105,28 @@ export class MengerSponge {
             // +Z
             {
                 verts: [
-                    [minx, miny, maxz],
-                    [minx, maxy, maxz],
-                    [maxx, maxy, maxz],
-                    [maxx, miny, maxz]
+                    //   [minx, miny, maxz],
+                    //   [minx, maxy, maxz],
+                    //   [maxx, maxy, maxz],
+                    //   [maxx, miny, maxz]
+                    [maxx, miny, maxz], // swapped
+                    [maxx, maxy, maxz], // swapped
+                    [minx, maxy, maxz], // swapped
+                    [minx, miny, maxz] // swapped
                 ],
                 norm: [0, 0, 1]
             },
             // -Z
             {
                 verts: [
-                    [maxx, miny, minz],
-                    [maxx, maxy, minz],
-                    [minx, maxy, minz],
-                    [minx, miny, minz]
+                    //   [maxx, miny, minz],
+                    //   [maxx, maxy, minz],
+                    //   [minx, maxy, minz],
+                    //   [minx, miny, minz]
+                    [minx, miny, minz], // swapped
+                    [minx, maxy, minz], // swapped
+                    [maxx, maxy, minz], // swapped
+                    [maxx, miny, minz] // swapped
                 ],
                 norm: [0, 0, -1]
             }
@@ -187,6 +207,7 @@ export class MengerSponge {
     uMatrix() {
         // TODO: change this, if it's useful
         const ret = new Mat4().setIdentity();
+        // ret.translate(new Vec3([0, -1.0, 0]));
         return ret;
     }
 }
