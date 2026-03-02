@@ -78,11 +78,20 @@ export class GUI {
             // rotation
             if (this.fps) {
                 // yaw and pitch
-                if (dx !== 0) {
-                    this.camera.yaw(GUI.rotationSpeed, dx > 0);
-                }
-                if (dy !== 0) {
-                    this.camera.pitch(GUI.rotationSpeed, dy > 0);
+                // if (dx !== 0) {
+                //     this.camera.yaw(GUI.rotationSpeed, dx > 0);
+                // }
+                // if (dy !== 0) {
+                //     this.camera.pitch(GUI.rotationSpeed, dy > 0);
+                // }
+                if (dx !== 0 || dy !== 0) {
+                    const len = Math.sqrt(dx * dx + dy * dy);
+                    if (dx !== 0) {
+                        this.camera.yaw(GUI.rotationSpeed * Math.abs(dx) / len, dx > 0);
+                    }
+                    if (dy !== 0) {
+                        this.camera.pitch(GUI.rotationSpeed * Math.abs(dy) / len, dy > 0);
+                    }
                 }
             }
             else {
@@ -217,7 +226,7 @@ export class GUI {
         canvas.addEventListener("contextmenu", (event) => event.preventDefault());
     }
 }
-GUI.rotationSpeed = 0.0356;
+GUI.rotationSpeed = 0.05;
 GUI.zoomSpeed = 0.1;
 GUI.rollSpeed = 0.1;
 GUI.panSpeed = 0.1;

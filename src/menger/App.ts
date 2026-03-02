@@ -109,7 +109,6 @@ export class MengerAnimation extends CanvasAnimation {
     /* Alias context for syntactic convenience */
     const gl: WebGLRenderingContext = this.ctx;
 
-    
     /* Compile Shaders */
     this.mengerProgram = WebGLUtilities.createProgram(
       gl,
@@ -175,7 +174,9 @@ export class MengerAnimation extends CanvasAnimation {
     );
 
     /* End VAO recording */
-    this.extVAO.bindVertexArrayOES(this.mengerVAO);
+    // this.extVAO.bindVertexArrayOES(this.mengerVAO);
+    // TESTING
+    this.extVAO.bindVertexArrayOES(null);
 
     /* Get uniform locations */
     this.mengerWorldUniformLocation = gl.getUniformLocation(

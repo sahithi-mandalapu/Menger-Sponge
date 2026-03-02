@@ -25,7 +25,7 @@ interface IGUI {
  * the the camera.
  */
 export class GUI implements IGUI {
-  private static readonly rotationSpeed: number = 0.0356;
+  private static readonly rotationSpeed: number = 0.05;
   private static readonly zoomSpeed: number = 0.1;
   private static readonly rollSpeed: number = 0.1;
   private static readonly panSpeed: number = 0.1;
@@ -146,12 +146,23 @@ export class GUI implements IGUI {
           // rotation
           if (this.fps) {
               // yaw and pitch
-              if (dx !== 0) {
-                  this.camera.yaw(GUI.rotationSpeed, dx > 0);
+              // if (dx !== 0) {
+              //     this.camera.yaw(GUI.rotationSpeed, dx > 0);
+              // }
+              // if (dy !== 0) {
+              //     this.camera.pitch(GUI.rotationSpeed, dy > 0);
+              // }
+              
+              if (dx !== 0 || dy !== 0) {
+                const len = Math.sqrt(dx * dx + dy * dy);
+                if (dx !== 0) {
+                    this.camera.yaw(GUI.rotationSpeed * Math.abs(dx) / len, dx > 0);
+                }
+                if (dy !== 0) {
+                    this.camera.pitch(GUI.rotationSpeed * Math.abs(dy) / len, dy > 0);
+                }
               }
-              if (dy !== 0) {
-                  this.camera.pitch(GUI.rotationSpeed, dy > 0);
-              }
+
           } else {
               // orbital mode: orbit about up/right axes
               if (dx !== 0) {

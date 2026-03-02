@@ -101,7 +101,9 @@ export class MengerAnimation extends CanvasAnimation {
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.mengerIndexBuffer);
         gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, this.sponge.indicesFlat(), gl.STATIC_DRAW);
         /* End VAO recording */
-        this.extVAO.bindVertexArrayOES(this.mengerVAO);
+        // this.extVAO.bindVertexArrayOES(this.mengerVAO);
+        // TESTING
+        this.extVAO.bindVertexArrayOES(null);
         /* Get uniform locations */
         this.mengerWorldUniformLocation = gl.getUniformLocation(this.mengerProgram, "mWorld");
         this.mengerViewUniformLocation = gl.getUniformLocation(this.mengerProgram, "mView");
