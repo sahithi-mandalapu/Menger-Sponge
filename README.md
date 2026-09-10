@@ -1,5 +1,4 @@
-# CS 354H: Computer Graphics Honors  
-## Assignment 2: Menger Sponge  
+# Menger Sponge  
 
 ### Authors  
 - Sahithi Mandalapu  
